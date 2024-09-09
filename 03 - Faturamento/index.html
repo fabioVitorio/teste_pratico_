@@ -1,0 +1,51 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Teste3</title>
+</head>
+<body>
+
+    <script>
+        // 3) Dado um vetor que guarda o valor de faturamento diário de uma distribuidora, faça um programa, na linguagem que desejar, que calcule e retorne:
+        // • O menor valor de faturamento ocorrido em um dia do mês;
+        // • O maior valor de faturamento ocorrido em um dia do mês;
+        // • Número de dias no mês em que o valor de faturamento diário foi superior à média mensal.
+
+        // IMPORTANTE:
+        // a) Usar o json ou xml disponível como fonte dos dados do faturamento mensal;
+        // b) Podem existir dias sem faturamento, como nos finais de semana e feriados. Estes dias devem ser ignorados no cálculo da média;
+
+        const data = [
+            {"dia": "2024-09-01", "faturamento": 200.0},
+            {"dia": "2024-09-02", "faturamento": 0.0},
+            {"dia": "2024-09-03", "faturamento": 350.0},
+            {"dia": "2024-09-04", "faturamento": 150.0},
+        ];
+
+        // Filtrar dias com faturamento maior que 0
+        const diasComFaturamento = data.filter(item => item.faturamento > 0);
+
+        // Calcular menor e maior valor de faturamento
+        const menorFaturamento = Math.min(...diasComFaturamento.map(item => item.faturamento));
+        const maiorFaturamento = Math.max(...diasComFaturamento.map(item => item.faturamento));
+
+        // Calcular a média mensal
+        const somaFaturamento = diasComFaturamento.reduce((acc, item) => acc + item.faturamento, 0);
+        const mediaFaturamento = somaFaturamento / diasComFaturamento.length;
+
+        // Contar o número de dias com faturamento acima da média
+        const diasAcimaDaMedia = diasComFaturamento.filter(item => item.faturamento > mediaFaturamento).length;
+
+
+        console.log('Menor valor de faturamento:', menorFaturamento);
+        console.log('Maior valor de faturamento:', maiorFaturamento);
+        console.log('Número de dias com faturamento acima da média mensal:', diasAcimaDaMedia);
+
+    </script>
+
+
+    
+</body>
+</html>

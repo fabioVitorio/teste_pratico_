@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Teste5</title>
+</head>
+<body>
+
+    <script>
+        // 5) Escreva um programa que inverta os caracteres de um string.
+        // IMPORTANTE:
+        // a) Essa string pode ser informada através de qualquer entrada de sua preferência ou pode ser previamente definida no código;
+        // b) Evite usar funções prontas, como, por exemplo, reverse;
+
+
+        function inverterString(str) {
+        let strInvertida = '';
+
+        // Adicionar a string de trás pra frentw
+        for (let i = str.length - 1; i >= 0; i--) {
+            strInvertida += str[i];
+        }
+            return strInvertida;
+        }
+
+
+        const stringOriginal = "Hello World";
+        const stringInvertida = inverterString(stringOriginal);
+
+        console.log('String original:', stringOriginal);
+        console.log('String invertida:', stringInvertida);
+
+
+    </script>
+
+
+    
+</body>
+</html>

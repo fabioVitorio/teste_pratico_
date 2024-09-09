@@ -1,0 +1,47 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Teste2</title>
+</head>
+<body>
+
+
+    
+    <script>
+        // 2) Dado a sequência de Fibonacci, onde se inicia por 0 e 1 e o próximo valor sempre será a soma dos 2 valores anteriores (exemplo: 0, 1, 1, 2, 3, 5, 8, 13, 21, 34...),
+        // escreva um programa na linguagem que desejar onde, informado um número, ele calcule a sequência de Fibonacci e retorne uma mensagem avisando se o número informado 
+        // pertence ou não a sequência.
+        
+        function Fibonacci(num) {
+
+            // Verificar se número é quadrado perfeito
+            function quadradoPerfeito(n) {
+                const calc = Math.sqrt(n);
+                return calc === Math.floor(calc);
+            }
+
+            // regra
+            const check1 = quadradoPerfeito(5 * num * num + 4);
+            const check2 = quadradoPerfeito(5 * num * num - 4);
+
+            return check1 || check2;
+        }
+
+        function check(num) {
+            if (Fibonacci(num)) {
+                console.log(`${num} pertence à sequência de Fibonacci.`);
+            } else {
+                console.log(`${num} NÃO pertence à sequência de Fibonacci.`);
+            }
+        }
+
+        // -- ALTERAR PARA TESTAR O PROGRAMA
+        check(5);
+    </script>
+
+
+    
+</body>
+</html>
